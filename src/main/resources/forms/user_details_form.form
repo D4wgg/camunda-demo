@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_07bhyby",
+        "columns": null
+      },
+      "id": "Field_0v21h21",
+      "key": "textfield_050yqy",
+      "description": "Specify your name from passport",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Gender",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1f6u1is",
+        "columns": null
+      },
+      "id": "Field_1xtxgmb",
+      "key": "textfield_8a5u6h",
+      "description": "Specify your gender from passport",
+      "validate": {
+        "required": true,
+        "pattern": "Man|Woman"
+      }
+    }
+  ],
+  "type": "default",
+  "id": "user_details_form",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.22.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.21.0",
+  "schemaVersion": 16
+}
