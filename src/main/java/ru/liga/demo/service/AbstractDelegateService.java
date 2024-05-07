@@ -9,7 +9,7 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 public abstract class AbstractDelegateService implements JavaDelegate {
 
     @Override
-    public void execute(DelegateExecution delegateExecution) throws Exception {
+    public void execute(DelegateExecution delegateExecution) {
         try {
             log.warn("Delegate {} was called for process {}",
                     getClass().getSimpleName(),
@@ -17,11 +17,11 @@ public abstract class AbstractDelegateService implements JavaDelegate {
             run(delegateExecution);
         } catch (Exception exception) {
             log.error("Error occurred", exception);
-            executeHandling(delegateExecution, exception);
+            executeHandling(exception);
         }
     }
 
-    public void executeHandling(DelegateExecution delegateExecution, Exception exception) {
+    public void executeHandling(Exception exception) {
         throw new BpmnError("PROCESS_ERROR", exception);
     }
 
